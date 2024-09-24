@@ -18,8 +18,8 @@ defineProps({
 </script>
 <template>
   <div>
-    <label>{{ label }}</label>
-    <input :type="type" v-model="model" :class="{ '!ring-red-500': error }" />
+    <label :for="label.toLowerCase().replace(' ', '-')">{{ label }}</label>
+    <input :id="label.toLowerCase().replace(' ', '-')" :type="type" v-model="model" :class="{ '!ring-red-500': error }" />
     <p class="error" v-if="error">{{ error }}</p>
   </div>
 </template>

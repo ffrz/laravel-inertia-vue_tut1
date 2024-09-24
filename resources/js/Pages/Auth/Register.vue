@@ -28,7 +28,7 @@ const submit = () => {
       <TextInput label="Password Confirmation" type="password" v-model="form.password_confirmation"
         :error="form.errors.password_confirmation" />
       <div>
-        <p class="text-slate-600">Do not have an account? <a href="#" class="text-link">Register</a></p>
+        <p class="text-slate-600">Already have an account? <Link :href="route('login')" class="text-link">Login</Link></p>
       </div>
       <div>
         <button class="primary-btn" type="submit" :disabled="form.processing">Register</button>
