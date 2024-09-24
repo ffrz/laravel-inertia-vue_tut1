@@ -1,7 +1,14 @@
 <script setup>
+import AuthLayout from '../Layouts/AuthLayout.vue';
+
 defineProps({
   user: Object
 })
+
+defineOptions({
+  layout: AuthLayout
+})
+
 </script>
 
 <template>
