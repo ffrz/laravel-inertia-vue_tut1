@@ -13,6 +13,12 @@ createInertiaApp({
     page.default.layout = page.default.layout || Layout
     return page
   },
+  progress: {
+    delay: 250,
+    color: 'white',
+    includeCSS: true,
+    showSpinner: true,
+  },
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
       .use(plugin)

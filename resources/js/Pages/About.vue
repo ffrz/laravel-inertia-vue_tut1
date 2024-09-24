@@ -1,4 +1,4 @@
 <template>
   <Head title="About" />
-  <h1 class="text-red-800 font-bold text-6xl">About</h1>
+  <h1 class="text-4xl">About</h1>
 </template>

@@ -10,5 +10,6 @@ $user = [
 Route::inertia('/', 'Index', ['user' => $user]);
 
 Route::get('/about', function () {
+  sleep(2);
   return inertia('About');
 });
