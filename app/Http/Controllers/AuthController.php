@@ -11,8 +11,6 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
-        sleep(1);
-
         $data = $request->validate([
             'avatar' => 'nullable|file|max:1024|mimes:jpeg,bmp,png',
             'name' => 'required|max:255',
