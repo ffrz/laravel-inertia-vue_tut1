@@ -12,5 +12,6 @@ defineOptions({
 </script>
 
 <template>
+  <Head title="Home" />
   <h1 class="text-red-800 font-bold text-6xl">Hello, {{ user.fullname }}!</h1>
 </template>
