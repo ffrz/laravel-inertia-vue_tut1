@@ -4,5 +4,5 @@
 
 <template>
   <Head title="Home" />
-  <h1 class="text-4xl">Hello, {{ $page.props.auth.user.fullname }}!</h1>
+  <h1 class="text-4xl">Hello, {{ $page.props.auth.user.name }}!</h1>
 </template>
