@@ -6,14 +6,9 @@ import PaginationLinks from '../Components/PaginationLinks.vue';
 import { debounce } from 'lodash';
 
 const props = defineProps({
-  users: {
-    type: Object,
-    required: true,
-  },
-  search: {
-    type: String,
-    default: '',
-  }
+  users: Object,
+  search:String,
+  can: Object
 });
 
 const formatDate = (date) => {
@@ -45,6 +40,7 @@ watch(search, debounce((q) => router.get('/', { search: q }, { preserveState: tr
         <th>Name</th>
         <th>Email</th>
         <th>Date Registered</th>
+        <th v-if="can.delete_user">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -53,6 +49,7 @@ watch(search, debounce((q) => router.get('/', { search: q }, { preserveState: tr
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
         <td>{{ formatDate(user.created_at) }}</td>
+        <td v-if="can.delete_user"><button class="bg-red-600 w-6 h-6 rounded-full"></button></td>
       </tr>
     </tbody>
   </table>

@@ -3,8 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 Route::get('/', function (Request $request) {
     return inertia('Index', [
@@ -15,7 +15,10 @@ Route::get('/', function (Request $request) {
                     ->orWhere('email', 'like', '%' . $request->search . '%');
             }
         )->paginate(5)->withQueryString(),
-        'search' => $request->search
+        'search' => $request->search,
+        'can' => [
+            'delete_user' => Auth::user() ? Auth::user()->can('delete', User::class) : null
+        ]
     ]);
 })->name('home');
 
